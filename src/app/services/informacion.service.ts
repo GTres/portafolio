@@ -5,7 +5,7 @@ import { Http } from "@angular/http";
 export class InformacionService {
   
   info:any={};
-  equipo:any[]=[];
+  equipo:any[] = [];
   cargada:boolean = false;
   cargada_sobre_nosotros:boolean = false;
   
@@ -18,7 +18,7 @@ export class InformacionService {
   public carga_info(){
     this.http.get("assets/data/info.pagina.json")
     .subscribe(data=>{
-      console.log(data.json());
+      // console.log(data.json());
       this.cargada = true;
       this.info = data.json();
     });
@@ -27,9 +27,10 @@ export class InformacionService {
   public carga_sobre_nosotros(){
     this.http.get("https://paginawebguillo.firebaseio.com/equipo.json")
     .subscribe(data=>{
-      console.log(data.json());
+      // console.log(data.json());
       this.cargada_sobre_nosotros = true;
       this.equipo = data.json();
+      // console.log(this.equipo);
     });
 
   }
