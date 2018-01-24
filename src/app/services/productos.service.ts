@@ -19,6 +19,7 @@ export class ProductosService {
       respuesta => { 
         console.log(respuesta.json()); 
         this.cargando = false;
+        this.productos = respuesta.json();
       });
   }
 
