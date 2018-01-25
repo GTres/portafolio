@@ -17,7 +17,6 @@ export class ProductosService {
     this.cargando = true;
     this.http.get("https://paginawebguillo.firebaseio.com/productos_idx.json").subscribe(
       respuesta => { 
-        console.log(respuesta.json()); 
         this.cargando = false;
         this.productos = respuesta.json();
       });
