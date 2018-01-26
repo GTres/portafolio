@@ -22,4 +22,9 @@ export class ProductosService {
       });
   }
 
+
+  public cargar_producto(cod:string){
+     return this.http.get(`https://paginawebguillo.firebaseio.com/productos/${cod}.json`);
+  }
+
 }
